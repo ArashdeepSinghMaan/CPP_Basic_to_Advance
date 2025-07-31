@@ -1,4 +1,3 @@
-# CPP_Basic_to_Advance
 
 Each folder contains:
 - `src/` → C++ source files
@@ -46,4 +45,57 @@ Each folder contains:
 ---
 
 ### **Task 6: Exception Handling**
-- **Goal:**
+- **Goal:** Implement robust error handling.
+- **Key Concepts:** `try-catch` blocks, exception safety.
+- **Deliverable:** Division function handling division-by-zero exceptions.
+
+---
+
+### **Task 7: Multithreading**
+- **Goal:** Work with parallel execution and synchronization.
+- **Key Concepts:** `std::thread`, `std::mutex`, shared data handling.
+- **Deliverable:** Multi-threaded counter with proper synchronization.
+
+---
+
+### **Task 8: File I/O & Serialization**
+- **Goal:** Persist and retrieve data from files.
+- **Key Concepts:** `std::ifstream`, `std::ofstream`, structured data parsing.
+- **Deliverable:** Read sensor data from a file and log processed output.
+
+---
+
+### **Task 9: CMake Project Setup**
+- **Goal:** Practice setting up a multi-file C++ project with CMake.
+- **Key Concepts:** Targets, linking, include directories.
+- **Deliverable:** Modular C++ project built with `CMakeLists.txt`.
+
+---
+
+### **Task 10: Mini Robot Simulation**
+- **Goal:** Integrate all learned concepts into one simulation.
+- **Key Concepts:** Object-oriented design, threading, file I/O, callbacks.
+- **Deliverable:** A simple robot class updating its position in a separate thread and logging its trajectory.
+
+---
+
+## **How to Build**
+### **Prerequisites**
+- C++17 or later
+- CMake 3.10+
+- A Linux environment (Ubuntu recommended)
+
+### **Build Steps**
+```bash
+# Clone the repository
+git clone https://github.com/<your-username>/cpp-robotics-fundamentals.git
+cd cpp-robotics-fundamentals
+
+# Build (example for Task 1)
+cd Task01_SmartPointers_RAII
+mkdir build && cd build
+cmake ..
+make
+
+# Run
+./smart_pointer_demo
