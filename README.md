@@ -1,4 +1,23 @@
+# C++ Fundamentals for Robotics & ROS2
 
+This repository contains **10 hands-on C++ projects** designed to strengthen core programming concepts frequently used in **Robotics and ROS2 development**.  
+The tasks focus on memory management, object-oriented programming, templates, multithreading, file I/O, and building projects using CMake.  
+These exercises are intended for engineers preparing to work on complex frameworks like **rclcpp** and **Navigation2 (Nav2)**.
+
+---
+
+## **Repository Structure**
+.
+├── Task01_SmartPointers_RAII
+├── Task02_Templates
+├── Task03_Inheritance_Polymorphism
+├── Task04_OperatorOverloading
+├── Task05_Lambdas_FunctionObjects
+├── Task06_ExceptionHandling
+├── Task07_Multithreading
+├── Task08_FileIO
+├── Task09_CMakeProject
+└── Task10_MiniRobotSimulation
 Each folder contains:
 - `src/` → C++ source files
 - `include/` → Header files (for modular tasks)
