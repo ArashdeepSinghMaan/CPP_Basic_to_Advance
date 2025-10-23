@@ -7,7 +7,11 @@ These exercises are intended for engineers preparing to work on complex framewor
 ---
 
 ## **Repository Structure**
+
 .
+├── Module01_Basic Concepts
+├── Module02_Memory Management
+├── Module03_Classes and Objects
 ├── Task01_SmartPointers_RAII
 ├── Task02_Templates
 ├── Task03_Inheritance_Polymorphism
