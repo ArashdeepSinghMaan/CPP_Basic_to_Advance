@@ -1,0 +1,119 @@
+Perfect — Module 3 is where C++ really starts to feel like robotics engineering: you’re no longer just crunching numbers, you’re **modeling real-world robotic systems as objects**. This is exactly how ROS2 and most robotics frameworks are structured: sensors, actuators, controllers, and planners are all classes with lifecycles, constructors, destructors, and copy semantics.  
+
+Here’s a **Robotics Problem Set for Module 3**, mapping each concept to a robotics-flavored exercise:
+
+---
+
+# 🤖 C++ Concepts Through Robotics Problems (Module 3)
+
+### 1. **Classes**
+- **Problem:** Define a `Motor` class with attributes like `rpm`, `voltage`, and methods `setSpeed()` and `stop()`.  
+- **Goal:** Encapsulate actuator behavior.
+
+---
+
+### 2. **Objects**
+- **Problem:** Create multiple `Motor` objects for a differential drive robot (`leftMotor`, `rightMotor`). Control them independently.  
+- **Goal:** Practice instantiating and using objects.
+
+---
+
+### 3. **Object Model**
+- **Problem:** Create a `Robot` class that contains `Motor` and `IMU` objects. Show how composition models a real robot.  
+- **Goal:** Understand object layout and relationships.
+
+---
+
+### 4. **Constructors**
+- **Problem:**  
+  - **Default:** Initialize a `Battery` with 12.0V.  
+  - **Parameterized:** Initialize with a custom voltage.  
+  - **Copy:** Duplicate a `Battery` object.  
+  - **Delegating:** One constructor calls another to avoid code duplication.  
+  - **Inheriting:** A `DroneBattery` inherits constructors from `Battery`.  
+- **Goal:** Lifecycle management of robotics components.
+
+---
+
+### 5. **Constructor Overloading**
+- **Problem:** Overload `Sensor` constructors: one takes a port number, another takes a baud rate, another takes both.  
+- **Goal:** Flexible initialization of hardware.
+
+---
+
+### 6. **Destructor**
+- **Problem:** In a `Camera` class, allocate memory for image frames in the constructor and release it in the destructor. Print a message when released.  
+- **Goal:** Resource cleanup in robotics drivers.
+
+---
+
+### 7. **Struct**
+- **Problem:** Define a `Pose` struct with `x, y, theta`. Use it to represent robot position.  
+- **Goal:** Lightweight data containers.
+
+---
+
+### 8. **Non-Static Data Member Initializers**
+- **Problem:** In a `PIDController` class, initialize `kp=1.0, ki=0.0, kd=0.0` directly in the class definition.  
+- **Goal:** Cleaner defaults for robotics control.
+
+---
+
+### 9. **`this` Pointer**
+- **Problem:** In a `Motor` class, implement `Motor& setSpeed(int rpm)` that returns `*this` to allow chaining: `motor.setSpeed(100).stop();`  
+- **Goal:** Fluent robotics APIs.
+
+---
+
+### 10. **Constant Member Functions**
+- **Problem:** In a `Pose` class, implement `double distanceTo(const Pose& other) const;` that doesn’t modify the object.  
+- **Goal:** Enforce immutability in robotics math.
+
+---
+
+### 11. **Qualifiers**
+- **Problem:** Mark a `Sensor` method `volatile` if it reads hardware registers. Use `mutable` for a cached timestamp.  
+- **Goal:** Explore qualifiers in embedded robotics.
+
+---
+
+### 12. **Static Member Variables**
+- **Problem:** In a `Robot` class, keep a static counter of how many robots are instantiated.  
+- **Goal:** Track global robotics resources.
+
+---
+
+### 13. **Copy Constructor**
+- **Problem:** Implement a copy constructor for a `Lidar` class that duplicates scan data.  
+- **Goal:** Safe copying of sensor data.
+
+---
+
+### 14. **Deep Copy vs Shallow Copy**
+- **Problem:** Show shallow copy of a `CameraFrame` (pointer to pixel buffer) leading to double-free errors. Fix with deep copy.  
+- **Goal:** Understand memory ownership in robotics.
+
+---
+
+### 15. **Rule of 3**
+- **Problem:** For a `Map` class that dynamically allocates a 2D grid, implement destructor, copy constructor, and copy assignment operator.  
+- **Goal:** Robust resource management.
+
+---
+
+### 16. **Default and Deleted Function Keywords**
+- **Problem:**  
+  - Mark `Robot(const Robot&) = delete;` to prevent copying.  
+  - Use `= default` for trivial constructors.  
+- **Goal:** Control object semantics in robotics APIs.
+
+---
+
+# 📌 Suggested Practice Flow
+1. Start with **basic classes/objects** → motors, sensors.  
+2. Move to **constructors/destructors** → lifecycle of hardware.  
+3. Explore **copy semantics** → lidar/camera data.  
+4. Finish with **Rule of 3 and deleted functions** → robust robotics APIs.  
+
+---
+
