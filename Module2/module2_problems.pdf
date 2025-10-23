@@ -1,0 +1,69 @@
+Excellent — Module 2 is all about **memory management and data layout**, which is absolutely critical in robotics. Robots often run on embedded systems with limited RAM, so understanding stack vs heap, allocation, and leaks is not just academic — it’s survival. Let’s map each concept to a robotics-flavored problem you can actually code and test.  
+
+---
+
+# 🤖 C++ Concepts Through Robotics Problems (Module 2)
+
+### 1. **Stack, Heap, Data Section**
+- **Problem:**  
+  Simulate storing robot configuration constants (e.g., wheel radius, max speed) in the **data section** (`const` globals), temporary loop variables (like encoder ticks) on the **stack**, and dynamically allocated lidar scan data (360 floats) on the **heap**.  
+- **Goal:** Visualize where different robotics data lives in memory.
+
+---
+
+### 2. **Dangling Pointer**
+- **Problem:**  
+  Write a function that returns a pointer to a local array of sensor readings. Try accessing it outside the function and observe undefined behavior.  
+  Example: `double* getIMUData() { double imu[3] = {0}; return imu; }`  
+- **Goal:** Understand why dangling pointers are dangerous in robotics drivers.
+
+---
+
+### 3. **`malloc`, `calloc`, `realloc`, `free`**
+- **Problem:**  
+  - Use `malloc` to allocate memory for 100 sonar readings.  
+  - Use `calloc` to allocate and auto-initialize memory for 100 lidar ranges.  
+  - Use `realloc` to expand lidar ranges from 100 to 360.  
+  - Free the memory at the end.  
+- **Goal:** Practice C-style memory management, which you’ll encounter in legacy robotics libraries.
+
+---
+
+### 4. **Memory Leak**
+- **Problem:**  
+  Write a loop that allocates memory for camera frames (`new unsigned char[640*480]`) but forgets to `delete[]`. Run it multiple times and monitor memory usage.  
+- **Goal:** See how leaks can crash long-running robots.
+
+---
+
+### 5. **`new`, `delete`**
+- **Problem:**  
+  Dynamically allocate a `Motor` object with `new`, set its speed, then `delete` it.  
+- **Goal:** Practice RAII-style memory management in robotics classes.
+
+---
+
+### 6. **`new[]`, `delete[]`**
+- **Problem:**  
+  Allocate an array of 6 `double` values for a 6-DOF manipulator’s joint angles using `new[]`. Update them in a loop, then `delete[]`.  
+- **Goal:** Manage arrays of robotics states dynamically.
+
+---
+
+### 7. **2D Array**
+- **Problem:**  
+  Represent a 2D occupancy grid map (10x10) as a 2D array. Fill it with `0` for free space and `1` for obstacles. Print the map.  
+- **Extension:** Use dynamic allocation (`int** grid`) to create a resizable map.  
+- **Goal:** Practice both static and dynamic 2D arrays for mapping.
+
+---
+
+# 📌 Suggested Practice Flow
+1. Start with **stack vs heap vs data section** → visualize memory layout.  
+2. Move to **dangling pointers** → see why safety matters.  
+3. Practice **malloc/calloc/realloc/free** → C-style.  
+4. Transition to **new/delete** → C++ style.  
+5. Finish with **2D arrays** → tie it back to robotics mapping.  
+
+---
+
