@@ -1,0 +1,164 @@
+
+---
+
+# 🚀 C++ Concepts Through Robotics Problems (Module 1)
+
+### 1. **Compilation**
+- **Problem:** Write a small program that simulates reading encoder ticks from a wheel and converting them to distance. Split the code into multiple `.cpp` and `.h` files (e.g., `encoder.cpp`, `encoder.h`, `main.cpp`). Practice compiling with `g++` and linking.  
+- **Goal:** Understand how compilation units work in robotics projects where drivers, algorithms, and main control loops are separated.
+
+---
+
+### 2. **Primitive Types and Variables**
+- **Problem:** Store IMU sensor readings (roll, pitch, yaw) in `float` variables, and wheel encoder counts in `int`. Show how overflow might occur if you use `short` for encoder counts after long runs.  
+- **Goal:** Appreciate type choice in embedded robotics.
+
+---
+
+### 3. **Header Files**
+- **Problem:** Create a `motor_controller.h` with function declarations for `setMotorSpeed(int rpm)` and `stopMotor()`. Implement them in `motor_controller.cpp`.  
+- **Goal:** Practice modular design like in ROS2 packages.
+
+---
+
+### 4. **Variable Declaration and Initialization**
+- **Problem:** Initialize a robot’s battery voltage (`double voltage = 12.6;`) and motor states (`bool motorOn = false;`). Compare uninitialized vs initialized variables by printing them.  
+- **Goal:** Reinforce safe initialization in robotics.
+
+---
+
+### 5. **Input/Output**
+- **Problem:** Ask the user to input wheel radius and encoder ticks, then compute distance traveled.  
+- **Goal:** Practice console I/O as a stand-in for sensor input.
+
+---
+
+### 6. **Delimiter**
+- **Problem:** Parse a CSV string `"12.5,0.8,3.14"` representing `(x, y, theta)` robot pose. Use `getline` with `','` as delimiter.  
+- **Goal:** Learn parsing sensor logs.
+
+---
+
+### 7. **Functions**
+- **Problem:** Write a function `double computeDistance(int ticks, double wheelRadius)` that converts encoder ticks to distance.  
+- **Goal:** Encapsulate robotics math.
+
+---
+
+### 8. **Inline Function**
+- **Problem:** Create an inline function `inline double deg2rad(double deg)` for angle conversions.  
+- **Goal:** Optimize small math utilities.
+
+---
+
+### 9. **Global Function**
+- **Problem:** Write a global function `emergencyStop()` that sets all motor speeds to zero.  
+- **Goal:** Understand global scope in safety-critical robotics.
+
+---
+
+### 10. **Function Templates**
+- **Problem:** Write a template `average<T>(T a, T b)` to compute average sensor readings (works for `int` encoder counts and `float` IMU data).  
+- **Goal:** Practice generic programming for multi-sensor systems.
+
+---
+
+### 11. **Uniform Initialization**
+- **Problem:** Initialize a `std::array<double,3> imuData{0.0, 0.0, 0.0};`.  
+- **Goal:** Safer initialization for robotics state vectors.
+
+---
+
+### 12. **Pointers**
+- **Problem:** Store a dynamically allocated array of lidar ranges (`double* ranges = new double[360];`).  
+- **Goal:** Understand memory management in sensor data.
+
+---
+
+### 13. **Null Pointer**
+- **Problem:** Simulate a sensor driver returning `nullptr` if the device is not connected. Handle it gracefully.  
+- **Goal:** Defensive programming in robotics.
+
+---
+
+### 14. **Macro**
+- **Problem:** Define `#define WHEEL_RADIUS 0.05` and use it in distance calculations. Then replace with `const` to show why macros are risky.  
+- **Goal:** Learn macro pitfalls in robotics constants.
+
+---
+
+### 15. **Reference**
+- **Problem:** Write a function `void updatePose(double& x, double& y, double dx, double dy)` that updates robot position by reference.  
+- **Goal:** Practice references for state updates.
+
+---
+
+### 16. **Qualifiers `const`**
+- **Problem:** Mark IMU calibration constants as `const double GYRO_BIAS = 0.01;`. Try modifying them to see compiler errors.  
+- **Goal:** Reinforce immutability in robotics configs.
+
+---
+
+### 17. **Compound Qualifier Types**
+- **Problem:** Use `const int* ptr` vs `int* const ptr` in a function that processes sensor buffers.  
+- **Goal:** Clarify pointer const-ness in robotics data pipelines.
+
+---
+
+### 18. **Automatic Type Inference (`auto`)**
+- **Problem:** Use `auto` when iterating over a `std::vector<double>` of lidar ranges.  
+- **Goal:** Cleaner code for robotics loops.
+
+---
+
+### 19. **Range-Based For Loop**
+- **Problem:** Iterate over a vector of motor RPMs and print them.  
+- **Goal:** Modern loop style for robotics arrays.
+
+---
+
+### 20. **For Loop**
+- **Problem:** Implement a PID loop that runs for 100 iterations, updating control output.  
+- **Goal:** Practice iterative control.
+
+---
+
+### 21. **Function Overloading**
+- **Problem:** Overload `setMotorSpeed(int rpm)` and `setMotorSpeed(double dutyCycle)`.  
+- **Goal:** Multiple interfaces for actuators.
+
+---
+
+### 22. **Name Mangling**
+- **Problem:** Compile two overloaded functions and inspect the symbol table with `nm`.  
+- **Goal:** Understand why C++ functions have mangled names in robotics libraries.
+
+---
+
+### 23. **Extern "C"**
+- **Problem:** Write a C-style function `extern "C" void initSensor();` and call it from C++ code.  
+- **Goal:** Practice C/C++ interoperability for robotics drivers.
+
+---
+
+### 24. **Default Function Arguments**
+- **Problem:** Write `void moveRobot(double speed, double duration=1.0);` so duration defaults to 1 second.  
+- **Goal:** Simplify robotics API design.
+
+---
+
+### 25. **Pointers to Functions**
+- **Problem:** Store different control strategies (`pidControl`, `bangBangControl`) in function pointers and switch at runtime.  
+- **Goal:** Flexible control architecture.
+
+---
+
+### 26. **Namespace**
+- **Problem:** Create `namespace navigation { void planPath(); }` and `namespace perception { void detectObstacle(); }`.  
+- **Goal:** Organize robotics modules.
+
+---
+
+
+
+
